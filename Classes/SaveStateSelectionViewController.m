@@ -132,16 +132,17 @@
                 NSDictionary *attr = [fileManager attributesOfItemAtPath:saveFilePath error:NULL];
                 NSDate *saveDate = [attr objectForKey:NSFileModificationDate];
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setLocale:[NSLocale currentLocale]];
                 [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
                 [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
-                NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:saveFile, @"title", [dateFormatter stringFromDate:saveDate], @"date", nil];
+                NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:saveFile, @"title", [dateFormatter stringFromDate:saveDate], @"date", [NSString stringWithFormat:@"%.1f",[saveDate timeIntervalSince1970]], @"sortkey", nil];
                 
 			    [saveArray addObject:dic];
 		    }
 		}
 	}
 	
-	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"sortkey" ascending:NO];
 	self.saveFiles = [saveArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]];
 	
 	[self.saveTableView reloadData];
