@@ -13,8 +13,8 @@
 	NSArray*         saveFiles;
 	
 	NSString *romFilter;
-	NSString *__weak selectedSavePath;
-	NSString *__weak selectedScreenshotPath;
+	NSString *selectedSavePath;
+	NSString *selectedScreenshotPath;
 	
 	UIBarButtonItem *editButton;
     UIToolbar *toolbar;

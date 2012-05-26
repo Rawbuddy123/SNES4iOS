@@ -313,7 +313,6 @@
 */
 
 - (void)dealloc {
-    [super dealloc];
 	[saveStateSelectionViewController removeObserver:self forKeyPath:@"selectedSavePath"];
 }
 

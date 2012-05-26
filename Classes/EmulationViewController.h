@@ -31,6 +31,6 @@
 - (void) setLandscapeRight;
 
 - (void) showPauseDialogFromRect:(CGRect)rect;
-- (void)object:(id)object clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void) object:(id)object clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 @end

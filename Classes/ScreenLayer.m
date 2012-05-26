@@ -35,20 +35,34 @@ unsigned int *screenPixels;
 		dict = CFDictionaryCreateMutable(kCFAllocatorDefault, 0,
 										 &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
 		CFDictionarySetValue(dict, kIOSurfaceIsGlobal, kCFBooleanTrue);
-		CFDictionarySetValue(dict, kIOSurfaceBytesPerRow,
-							 CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &pitch));
-		CFDictionarySetValue(dict, kIOSurfaceBytesPerElement,
-                 			 CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &bytesPerElement));
-		CFDictionarySetValue(dict, kIOSurfaceWidth,
-							 CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &w));
-		CFDictionarySetValue(dict, kIOSurfaceHeight,
-							 CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &h));
-		CFDictionarySetValue(dict, kIOSurfacePixelFormat,
-							 CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, pixelFormat));
-		CFDictionarySetValue(dict, kIOSurfaceAllocSize,
-							 CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &allocSize));
-		
+        
+        CFNumberRef num1 = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &pitch);
+		CFDictionarySetValue(dict, kIOSurfaceBytesPerRow, num1);
+        CFRelease(num1);
+        
+        CFNumberRef num2 = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &bytesPerElement);
+		CFDictionarySetValue(dict, kIOSurfaceBytesPerElement, num2);
+        CFRelease(num2);
+        
+        CFNumberRef num3 = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &w);
+		CFDictionarySetValue(dict, kIOSurfaceWidth, num3);
+        CFRelease(num3);
+        
+        CFNumberRef num4 = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &h);
+		CFDictionarySetValue(dict, kIOSurfaceHeight, num4);
+        CFRelease(num4);
+        
+        CFNumberRef num5 = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, pixelFormat);
+		CFDictionarySetValue(dict, kIOSurfacePixelFormat, num5);
+        CFRelease(num5);
+        
+        CFNumberRef num6 = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &allocSize);
+		CFDictionarySetValue(dict, kIOSurfaceAllocSize, num6);
+		CFRelease(num6);
+        
 		_surface = IOSurfaceCreate(dict);
+        
+        CFRelease(dict);
         
         NSLog(@"created IOSurface at %p", _surface);
 

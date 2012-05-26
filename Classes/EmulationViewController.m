@@ -100,6 +100,8 @@ void saveScreenshotToFile(char *filepath)
 	[pngData writeToFile:[NSString stringWithCString:filepath encoding:NSUTF8StringEncoding] atomically:YES];
 	
 	CGImageRelease(imageRef);
+    CGColorSpaceRelease(colorSpaceRef);
+    CGDataProviderRelease(provider);
     free(argb_buffer);
 
 }
@@ -158,6 +160,7 @@ void saveScreenshotToFile(char *filepath)
 
 #pragma mark - Save States
 
+/*
 - (void)saveState:(id)sender {
     UIButton *button = (UIButton *)sender;
     __emulation_saving = button.tag;
@@ -174,13 +177,16 @@ void saveScreenshotToFile(char *filepath)
 - (void)loadState:(id)sender {
     
 }
+*/
 
 #pragma mark -
 
-- (void)exit:(id)sender {
+/*
+- (void) exit:(id)sender {
     __emulation_run = 0;
     [AppDelegate() showEmulator:NO];
 }
+*/
 
 - (void) refreshScreen
 {

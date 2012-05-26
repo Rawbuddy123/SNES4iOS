@@ -505,7 +505,7 @@ void rt_dispatch_sync_on_main_thread(dispatch_block_t block) {
 		int i = 0;
         while(fgets(string, 256, fp) != NULL && i < 24) {
 			char* result = strtok(string, ",");
-			int coords[4];
+			int coords[4] = {0};
 			int i2 = 1;
 			while( result != NULL && i2 < 5 )
 			{
