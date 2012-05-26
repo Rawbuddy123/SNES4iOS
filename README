@@ -1,0 +1,98 @@
+Emulators for various platforms have been available for years on the iOS platform, but they’ve always required the user to jailbreak their devices. Thanks to Spencer Nielsen (@snielsen42 http://www.aorensoftware.com/blog/2011/05/23/play-snes-games-on-your-ipad-without-jailbreaking/), an SNES emulator for iOS is now available, albeit only for developers.
+
+WHAT’S NEW IN VERSION 1.1:
+•Sustain Button: a new button (looks like a circle with four arrows pointed towards the center) allows you to essentially sustain, or hold down a button without keeping your finger on the button. You tap the sustain button, it will turn orange, and then you tap the button you wish to sustain. For example, if you wanted to keep your character moving to the right, you’d tap the sustain button, then tap the right button, and then you can lift your finger off and it will keep going to the right. This is especially useful in platformers such as Mario games, as you can sustain the run button without having to hold it down!
+•Both the Objective-C app code and the C snes9x emulator code are included in the same .xcworkspace file. It’s strongly recommended you use the workspace file instead of the individual project files.
+•Since the snes9x code is now in an Xcode project, it can be compiled natively in Xcode via the included makefile. However, you MUST clean the pocketsnes target before EVERY build, or else it won’t build all your changes.
+•Converted everything to LLVM 3.0! No longer need to use an old Xcode version to change the snes9s code!
+•No longer crashes when loading a ROM (however, at this time it still crashes when quitting one).
+
+
+This port is a modified version of SNES--HD- by WoozleWrangler, found here:
+
+https://github.com/WoozleWrangler/SNES--HD-
+
+This provided the vast majority of the Objective-C code. Some improvements found in this version include:
+
+•iTunes FIle Sharing support
+•Universal app to support iPhone in addition to the already included iPad.
+•Incorporates the functionality of ControlPad (http://github.com/WoozleWrangler/ControlPad) into the same binary, so you don’t need to keep track of two apps.
+
+But skipping past all that, here are the big features of this port at this time:
+•Universal app to play all SNES ROMs on your iPhone and iPad.
+•When playing on your iPad, you use an iPhone/iPod Touch to control it.
+•Load ROMs through iTunes File Sharing, or by downloading them from within the app.
+•Saves your ROM data through .srm files.
+•iPhone/iPod Touch offers two orientations to control game: portrait and landscape (iPad is only landscape).
+•Save states available for iPad (coming soon to iPhone/iPod Touch)
+
+Known issues:
+•Although saving states is supported on the iPhone, there’s no way to load them at this time.
+•Quitting a ROM crashes the app (but if you’re quitting the ROM, surely this doesn’t matter that much right? :P)
+•The iPad can only connect to the iPhone the first time the connection popover appears. Any subsequent times for some reason can’t find the phone.
+•Same with the iPhone, only the first time the popup appears on the controller view can you connect with the iPad.
+•There’s an iCloud toggle in the iPad app, but it doesn’t do anything since I haven’t added iCloud support yet.
+•Sometimes pausing the game crashes the ROM. So don’t pause unless you absolutely need to! (Haven’t seen this in version 1.1, but continue at your own risk!)
+
+Features to come:
+•iCloud support, so you can sync your game saved data across devices :)
+•Ability to control the iPad without having to use an iPhone/iPod Touch.
+•Save states for iPhone/iPod Touch.
+•Ability to load a save state from within the ROM.
+
+How-To’s:
+•To import a save file (.srm), simply drag it into the documents folder in iTunes. Upon the next launch or by tapping the refresh button, it will move it into the correct folder for you.
+•To connect iPhone to iPad, open up the iPad app. If you have it to automatically search for devices the connection popup will appear, if not, tap the player 1 controller. On the iPhone, open the app, and tap the controller button in the bottom left corner. The controller will appear and will start searching for your device. Tap it when you find it, then tap Confirm on the iPad when it appears.
+•To pause the game, double-tap the screen on the iPad, or tap the Menu button on the iPhone (located in the bottom left corner when in portrait mode).
+•To load a save state (iPad only for now), tap the ROM you want to launch, and then tap the save state from the tableview at the bottom of the screen. Next, tap “Load” instead of Power to load the save state.
+
+So for now get to compiling and enjoy your SNES emulator without having to jailbreak!
+
+If you want to contribute…
+
+The actual emulator code seems to crash for various reasons, and I haven’t had time to look through it all. I’ve included the snes9x source in the SNES4iOS.xcworkspace file, so edit your changes in there. Once done, CLEAN the pocketsnes target, THEN build it.
+
+Thanks again to Spencer Nielsen for writing the patch to allow this to work on non-jailbroken devices. Without him, none of this would have happened :)
+
+SNES4iOS is free for non-commercial use, in keeping with the original Snes9x licence, reproduced below:
+
+/*
+ * Snes9x - Portable Super Nintendo Entertainment System (TM) emulator.
+ *
+ * (c) Copyright 1996 - 2001 Gary Henderson (gary.henderson@ntlworld.com) and
+ *                           Jerremy Koot (jkoot@snes9x.com)
+ *
+ * Super FX C emulator code 
+ * (c) Copyright 1997 - 1999 Ivar (ivar@snes9x.com) and
+ *                           Gary Henderson.
+ * Super FX assembler emulator code (c) Copyright 1998 zsKnight and _Demo_.
+ *
+ * DSP1 emulator code (c) Copyright 1998 Ivar, _Demo_ and Gary Henderson.
+ * C4 asm and some C emulation code (c) Copyright 2000 zsKnight and _Demo_.
+ * C4 C code (c) Copyright 2001 Gary Henderson (gary.henderson@ntlworld.com).
+ *
+ * DOS port code contains the works of other authors. See headers in
+ * individual files.
+ *
+ * Snes9x homepage: http://www.snes9x.com
+ *
+ * Permission to use, copy, modify and distribute Snes9x in both binary and
+ * source form, for non-commercial purposes, is hereby granted without fee,
+ * providing that this license information and copyright notice appear with
+ * all copies and any derived work.
+ *
+ * This software is provided 'as-is', without any express or implied
+ * warranty. In no event shall the authors be held liable for any damages
+ * arising from the use of this software.
+ *
+ * Snes9x is freeware for PERSONAL USE only. Commercial users should
+ * seek permission of the copyright holders first. Commercial use includes
+ * charging money for Snes9x or software derived from Snes9x.
+ *
+ * The copyright holders request that bug fixes and improvements to the code
+ * should be forwarded to them so everyone can benefit from the modifications
+ * in future versions.
+ *
+ * Super NES and Super Nintendo Entertainment System are trademarks of
+ * Nintendo Co., Limited and its subsidiary companies.
+ */

@@ -1,0 +1,18 @@
+//
+// Prefix header for all source files of the 'SNES4iPad' target in the 'SNES4iPad' project
+//
+#import <Availability.h>
+
+#ifndef __IPHONE_3_2
+#warning "This project uses features only available in iPhone SDK 3.2 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+
+#import "SNES4iOSAppDelegate.h"
+#endif
+
+#define RADIANS(degrees) ((degrees * M_PI) / 180.0)
+#define DEGREES(radians) (radians * 180.0/M_PI)
