@@ -16,6 +16,9 @@
 
 #define	DefaultControllerImage @"landscape_controller"
 
+#define RADIANS(degrees) ((degrees * M_PI) / 180.0)
+#define DEGREES(radians) (radians * 180.0/M_PI)
+
 extern unsigned long gp2x_pad_status;
 static unsigned long newtouches[10];
 static unsigned long oldtouches[10];

@@ -10,6 +10,9 @@
 #import "SettingsViewController.h"
 #import <math.h>
 
+#define RADIANS(degrees) ((degrees * M_PI) / 180.0)
+#define DEGREES(radians) (radians * 180.0/M_PI)
+
 unsigned int *screenPixels;
 
 @implementation ScreenLayer

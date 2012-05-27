@@ -15,6 +15,9 @@
 
 #define kSavedState @"savedState"
 
+#define RADIANS(degrees) ((degrees * M_PI) / 180.0)
+#define DEGREES(radians) (radians * 180.0/M_PI)
+
 volatile int __emulation_run;
 volatile int __emulation_saving;
 volatile int __emulation_paused;
