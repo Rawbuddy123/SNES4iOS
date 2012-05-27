@@ -1,6 +1,9 @@
 
 #include "menu.h"
 
+extern bool S9xFreezeGame (const char *filename);
+extern bool S9xUnfreezeGame (const char *filename);
+
 char romDir[MAX_PATH+1];
 char snesRomDir[MAX_PATH+1];
 
