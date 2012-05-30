@@ -11,7 +11,7 @@
 @ the code is released under Snes9x license. See spcgen.c or any other source file
 @ from Snes9x source tree.
 
-
+.align  2
   .globl _S9xAPUGetByte
   .globl _S9xAPUSetByte
   .globl _S9xAPUGetByteZ
