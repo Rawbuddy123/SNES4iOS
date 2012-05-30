@@ -11,7 +11,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <fcntl.h>
-#import	<CoreSurface/CoreSurface.h>
+#import	<IOSurface/IOSurface.h>
 #import <AudioToolbox/AudioQueue.h>
 #include "iphone_sdk.h"
 #include <sys/time.h>

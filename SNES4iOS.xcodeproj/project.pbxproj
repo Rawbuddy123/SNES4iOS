@@ -53,7 +53,6 @@
 		BFFFEABF14B7F3D100B4B2C7 /* sustainButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFFEABD14B7F3D100B4B2C7 /* sustainButtonHighlighted@2x.png */; };
 		BFFFEAC014B7F3D100B4B2C7 /* sustainButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFFEABE14B7F3D100B4B2C7 /* sustainButtonHighlighted.png */; };
 		CE43A4B4119DF2B00007E399 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43A4B3119DF2B00007E399 /* QuartzCore.framework */; };
-		CE43A4B6119DF2D80007E399 /* CoreSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43A4B5119DF2D80007E399 /* CoreSurface.framework */; };
 		CE43A4DB119DFEF70007E399 /* cartridge.png in Resources */ = {isa = PBXBuildFile; fileRef = CE43A4CD119DFEF70007E399 /* cartridge.png */; };
 		CE43A4DC119DFEF70007E399 /* console.png in Resources */ = {isa = PBXBuildFile; fileRef = CE43A4CE119DFEF70007E399 /* console.png */; };
 		CE43A4DD119DFEF70007E399 /* controlpad.png in Resources */ = {isa = PBXBuildFile; fileRef = CE43A4CF119DFEF70007E399 /* controlpad.png */; };
@@ -170,7 +169,6 @@
 		CE43A4A3119DEA3C0007E399 /* EmulationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmulationViewController.h; sourceTree = "<group>"; };
 		CE43A4A4119DEA3C0007E399 /* EmulationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmulationViewController.m; sourceTree = "<group>"; };
 		CE43A4B3119DF2B00007E399 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CE43A4B5119DF2D80007E399 /* CoreSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSurface.framework; path = System/Library/PrivateFrameworks/CoreSurface.framework; sourceTree = SDKROOT; };
 		CE43A4CD119DFEF70007E399 /* cartridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cartridge.png; sourceTree = "<group>"; };
 		CE43A4CE119DFEF70007E399 /* console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = console.png; sourceTree = "<group>"; };
 		CE43A4CF119DFEF70007E399 /* controlpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controlpad.png; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 		CE43A4D8119DFEF70007E399 /* SaveStateSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveStateSelectionViewController.xib; sourceTree = "<group>"; };
 		CE43A4D9119DFEF70007E399 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		CE43A4DA119DFEF70007E399 /* snapshot-test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snapshot-test.png"; sourceTree = "<group>"; };
-		CE43A50D119E01600007E399 /* CoreSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSurface.h; sourceTree = "<group>"; };
 		CE43A516119E087E0007E399 /* SNES4iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SNES4iOS-Info.plist"; sourceTree = "<group>"; };
 		CEA57D621198B621004DCD60 /* SaveStateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveStateSelectionViewController.h; sourceTree = "<group>"; };
 		CEA57D631198B621004DCD60 /* SaveStateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveStateSelectionViewController.m; sourceTree = "<group>"; };
@@ -219,7 +216,6 @@
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				CEA57F0B1198E6F8004DCD60 /* GameKit.framework in Frameworks */,
 				CE43A4B4119DF2B00007E399 /* QuartzCore.framework in Frameworks */,
-				CE43A4B6119DF2D80007E399 /* CoreSurface.framework in Frameworks */,
 				6C3CE6EB135BCD0400D61F53 /* IOSurface.framework in Frameworks */,
 				6CD00F45135FED04003E789A /* libpocketsnes.a in Frameworks */,
 				6CD00F60135FEE9C003E789A /* AudioToolbox.framework in Frameworks */,
@@ -303,7 +299,6 @@
 				BF7B7A2814A64D3400014E61 /* IOSurface */,
 				BF7B7A2614A64D2100014E61 /* libkern */,
 				BF7B7A1314A64D0A00014E61 /* IOKit */,
-				CE43A50C119E01600007E399 /* CoreSurface */,
 				BF7B7A1114A64C5E00014E61 /* AVFoundation.framework */,
 				BF7B7A0F14A64C5600014E61 /* MediaPlayer.framework */,
 				CEA57F0A1198E6F8004DCD60 /* GameKit.framework */,
@@ -435,15 +430,6 @@
 				BFD71B9F14A5A2B100850EEE /* RomSelectionViewController.xib */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		CE43A50C119E01600007E399 /* CoreSurface */ = {
-			isa = PBXGroup;
-			children = (
-				CE43A4B5119DF2D80007E399 /* CoreSurface.framework */,
-				CE43A50D119E01600007E399 /* CoreSurface.h */,
-			);
-			path = CoreSurface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
