@@ -188,7 +188,7 @@
 	{
 		if(characterLUT[i] == 1)
 		{
-			NSString* characters = [NSString stringWithString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ#"];
+			NSString* characters = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ#";
 			NSString* characterIndex = [characters substringWithRange:NSMakeRange(i,1)];
 			[arrayOfCharacters addObject:characterIndex];
 			[objectsForCharacters setObject:arrayOfIndexedFiles[i] forKey:characterIndex];
